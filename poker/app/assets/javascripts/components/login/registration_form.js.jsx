@@ -29,7 +29,7 @@ class RegistrationForm extends React.Component {
 
   _onChange(e) {
     var state = {};
-    state[e.target.name] =  $.trim(e.target.value);
+    state[e.target.name] = $.trim(e.target.value);
     this.setState(state);
   }
 
@@ -53,14 +53,14 @@ class RegistrationForm extends React.Component {
       if(result.code == 1){
         $("input[name='display_name']").closest("div.form-group").addClass('has-error');
         $("input[name='display_name']").attr({
-          title: "Join in Failed..", 
+          title: "Join in Failed..",
           'data-content': result.error_message
         }).popover('show');
       }
       else if(result.code == 2){
         $("input[name='room_id']").closest("div.form-group").addClass('has-error');
         $("input[name='room_id']").attr({
-          title: "Join in Failed..", 
+          title: "Join in Failed..",
           'data-content': result.error_message
         }).popover('show');
       }
