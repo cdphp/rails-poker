@@ -1,0 +1,121 @@
+// Place all the styles related to the room controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$chat_height_min: 42px !default;
+
+body {
+    font-family: "Hiragino Sans GB","华文细黑","STHeiti","微软雅黑","Microsoft YaHei",SimHei,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+ul.chat-list {
+  li.list-group-item {
+    min-height: $chat_height_min;
+  }
+}
+.modal-dialog {
+  z-index: inherit;
+}
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+    margin-top: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: $gray-dark;
+  }
+}
+
+.room-subject {
+  button {
+    margin-left: 2em;
+  }
+}
+.poker-table {
+  height: 400px;
+  max-height: 600px;
+}
+
+.avatar {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+.attendees-list {
+    padding-left: 0;
+    list-style: none;
+    float: left;
+    li {
+      font-size: $font-size-small;
+      padding: 0.1em 5px;
+      margin: 0.1em 5px;
+      width: 28%;
+      max-width: 60px;
+      min-width: 59px;
+      float: left;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      position: relative;
+      .avatar {
+        width: 95%;
+        background-color: $gray-dark;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .card {
+        top: 0px;
+        left: 0px;
+        position: absolute;
+      }
+      span {
+      }
+    }
+    h4 {
+      padding-left: 2em;
+    }
+    .online {
+      color: $gray-base;
+    }
+    .offline {
+      color: $gray;
+    }
+    .myself {
+      .avatar {
+        border: 2px dashed #9c9c9c;
+      }
+    }
+    .played {
+      font-weight: bolder;
+      .avatar {
+        img{
+          opacity: 0.5;
+        }
+      }
+      .avatar:before {
+        content: 'played';
+        position: absolute;
+        color: #fff;
+        margin: 1em auto;
+      }
+    }
+
+}
+
+.poker-emitter {
+  position: fixed;
+  bottom: 23.33333px;
+  i {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,11 @@
+- props = { subject: current_room.subject, current_room: current_room.id, current_user: session[:current_user_id], current_user_name: current_user.display_name, owner: current_room.owner_id == current_user.id, room_status: current_room.status_name, statistics_data: {statistics: current_room.statistics_data} }
+= stylesheet_link_tag "main"
+.container
+  .poker-header
+    h1.room-subject
+      span
+        = current_room.subject
+      - if current_user.id == current_room.owner_id
+        button.right.btn edit
+  = react_component 'PokerRoom', props, {class: 'row'}
+  .poker-footer

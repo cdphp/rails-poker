@@ -1,0 +1,4 @@
+= stylesheet_link_tag "login"
+.container-fluid
+  .login-box
+    = react_component "SignBox", {room_id: params[:room_id], action: params[:room_id].present? ? 'sign' : 'reg'}
