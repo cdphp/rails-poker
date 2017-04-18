@@ -10,18 +10,18 @@ class PokerEmitter extends React.Component {
     return(
       <div className="col-sm-8 poker-emitter form-inline">
         <div className="row">
-          <div className="input-group col-md-8">
-            <span className="input-group-addon">
-              <i className="glyphicon glyphicon-piggy-bank"></i>
-            </span>
-            <form ref='play_card' onSubmit={this._onSubmit.bind(this)}>
+          <form ref='play_card' onSubmit={this._onSubmit.bind(this)}>
+            <div className="input-group col-md-8">
+              <span className="input-group-addon">
+                <i className="glyphicon glyphicon-piggy-bank"></i>
+              </span>
               <input type="number" name="card_number" disabled={input_disable} className="form-control input-lg" placeholder="Enter Your Number..." onChange={this._onChange.bind(this)} value={this.state.card_number} />
               <span className="input-group-btn">
                 <button className="btn btn-default btn-lg" type="submit">Send</button>
               </span>
-            </form>
-          </div>
+            </div>
           { owner_button }
+          </form>
         </div>
       </div>
     )
