@@ -14,10 +14,12 @@ class PokerEmitter extends React.Component {
             <span className="input-group-addon">
               <i className="glyphicon glyphicon-piggy-bank"></i>
             </span>
-            <input type="number" name="card_number" disabled={input_disable} className="form-control input-lg" placeholder="Enter Your Number..." onChange={this._onChange.bind(this)} value={this.state.card_number} />
-            <span className="input-group-btn">
-              <button className="btn btn-default btn-lg" type="button" onClick={this.handlePlay.bind(this)}>Send</button>
-            </span>
+            <form ref='play_card' onSubmit={this._onSubmit.bind(this)}>
+              <input type="number" name="card_number" disabled={input_disable} className="form-control input-lg" placeholder="Enter Your Number..." onChange={this._onChange.bind(this)} value={this.state.card_number} />
+              <span className="input-group-btn">
+                <button className="btn btn-default btn-lg" type="submit">Send</button>
+              </span>
+            </form>
           </div>
           { owner_button }
         </div>
@@ -65,8 +67,12 @@ class PokerEmitter extends React.Component {
     this.setState(state);
   }
 
-  handlePlay(event) {
-    event.preventDefault();
+  _onSubmit(e) {
+    e.preventDefault();
+    this.handlePlay(e);
+  }
+
+  handlePlay() {
     var card_number = this.state.card_number.trim();
     if (!card_number) return;
     this.props.onPlayCard({card_number: card_number});
