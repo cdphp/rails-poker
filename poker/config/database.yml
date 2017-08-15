@@ -5,6 +5,7 @@ default: &default
   host: db
   username: root
   password: root
+  encoding: utf8
 
 development:
   <<: *default

@@ -17,6 +17,8 @@ module PokerNew
     config.sass.line_comments = false
     config.sass.cache = false
 
+    config.encoding = "utf-8"
+
     config.autoload_paths += %W(#{config.root}/lib)
 
     config.react.server_renderer_pool_size  ||= 1  # ExecJS doesn't allow more than one on MRI
