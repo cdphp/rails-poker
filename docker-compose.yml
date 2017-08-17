@@ -4,6 +4,8 @@ services:
     image: mysql
     ports:
       - "3306"
+    volumes:
+      - ./my.cnf:/etc/mysql/my.cnf
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: root
