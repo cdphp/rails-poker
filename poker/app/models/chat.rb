@@ -14,8 +14,8 @@ class Chat < ApplicationRecord
   end
 
   def clear_history
-    if Chat.select('id').all.count > 10000
-      Chat.where('id < ?',Chat.select('id').limit(5000).last.id).delete_all
+    if Chat.select('id').all.count > 100000
+      Chat.where('id < ?',Chat.select('id').limit(50000).last.id).delete_all
     end
   end
 end

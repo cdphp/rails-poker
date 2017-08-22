@@ -5,18 +5,37 @@ class ChatList extends React.Component {
       return this.renderChat(chat);
     });
     return (
-      <ul className="chat-list list-group">
-        {chats}
-      </ul>
+      <div className="well well-lg chat-box">
+        <ul className="chat-list list-group">
+          {chats}
+          <li style={{ float:"left", clear: "both" }}
+               ref={(el) => { this.messagesEnd = el; }}>
+          </li>
+        </ul>
+      </div>
     );
   }
 
   renderChat(chat) {
     return (
       <li className="list-group-item" key={ chat.id }>
-        <span className="badge author">{ chat.user }</span>
+        <span className="label label-default display-name">{ chat.user }</span>
         { chat.message }
       </li>
     );
   }
+
+  scrollToBottom() {
+    const node = ReactDOM.findDOMNode(this.messagesEnd);
+    node.scrollIntoView({ behavior: "smooth" });
+  }
+
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
 }

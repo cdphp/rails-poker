@@ -14,11 +14,21 @@ body {
     -moz-osx-font-smoothing: grayscale
 }
 
-ul.chat-list {
-  li.list-group-item {
-    min-height: $chat_height_min;
+div.chat-box {
+  ul.chat-list {
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+    li.list-group-item {
+      min-height: $chat_height_min;
+      border-style: none;
+      .display-name {
+        margin-right: 0.5em;
+      }
+    }
   }
 }
+
 .modal-dialog {
   z-index: inherit;
 }
