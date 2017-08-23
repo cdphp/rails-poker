@@ -20,11 +20,13 @@ class AddChat extends React.Component {
     return (
       <div>
         <form className="new_chat" role="form" onSubmit={this.handleSubmit.bind(this)}>
-          <div className="form-group">
-            <input type="text" className="form-control input-lg" name="message" placeholder="Type your chat here ..."
+          <div className="input-group">
+            <input type="search" className="form-control input-lg" name="message" placeholder="Typing here ..."
                 value={this.state.message} onChange={this.handleChatChange.bind(this)} maxLength="140"/>
+            <span className="input-group-btn">
+              <button type="submit" className="btn btn-default btn-lg">Send</button>
+            </span>
           </div>
-          <button type="submit" className="btn btn-default">Send</button>
         </form>
       </div>
     );

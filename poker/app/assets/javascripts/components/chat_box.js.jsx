@@ -37,20 +37,26 @@ class ChatBox extends React.Component {
   }
 
   freshChatList(data) {
-    console.log('fresh Chat List');
+    // console.log('fresh Chat List');
     var new_chat = JSON.parse(data);
     var new_chats_list = $.merge($.merge([], this.state.chats), new_chat.chats);
     this.setState({chats: new_chats_list.slice(-100)});
   }
 
   setupSubscription(){
+    me = this.props.me;
     App.channel = App.cable.subscriptions.create({channel: "ChatChannel"}, {
       connected() {
+        data = { message: 'joint', me: me };
+        this.perform('speak', data);
         setTimeout(() => this.perform('subscribed'), 1000 );
       },
-      disconnected() {},
+      disconnected() {
+        data = { message: 'quit', me: me };
+        this.perform('speak', data);
+      },
       received(data) {
-        console.log('reviced');
+        // console.log('reviced');
         return this.updateChatList(data);
       },
 
