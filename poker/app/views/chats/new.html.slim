@@ -1,4 +1,5 @@
+= stylesheet_link_tag 'main'
 .container-fluid
   #chatBox.row
     - chats = @chats
-    = react_component 'ChatBox'
+    = react_component('ChatBox', { me: @me })

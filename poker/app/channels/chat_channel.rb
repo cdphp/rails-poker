@@ -11,7 +11,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak data
-    @chat = Chat.new message: data['message']
+    @chat = Chat.new message: data['message'], user_id: data['me']
     @chat.save
   end
 

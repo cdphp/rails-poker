@@ -12,7 +12,7 @@ class AddChat extends React.Component {
     event.preventDefault();
     var message = this.state.message.trim();
     if (!message) return;
-    this.props.onChatSubmit({message: message});
+    this.props.onChatSubmit({message: message, me: this.props.me});
     this.setState({ message: "" });
   }
 
