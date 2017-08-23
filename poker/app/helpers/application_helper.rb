@@ -1,8 +1,7 @@
 module ApplicationHelper
 
   def display_user message
-    # message.user_id > 0 ? message.user.name : "anonymous"
-    session['display_name'] ||= Sanguo.names.sample
+    Sanguo.names[message.user_id.to_i]
   end
 
   # def current_room

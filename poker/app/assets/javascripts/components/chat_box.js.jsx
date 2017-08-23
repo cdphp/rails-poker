@@ -14,7 +14,7 @@ class ChatBox extends React.Component {
       <div className="col-md-9 col-md-offset-1">
         <h1>chat room demo based on action cable.</h1>
         <ChatList chats={this.state.chats}/>
-        <AddChat onChatSubmit={this.handleChatSubmit.bind(this)}/>
+        <AddChat me={this.props.me} onChatSubmit={this.handleChatSubmit.bind(this)}/>
       </div>
     )
   }
@@ -38,7 +38,7 @@ class ChatBox extends React.Component {
   }
 
   freshChatList(data) {
-    console.log('freshChatList');
+    console.log('fresh Chat List');
     var new_chat = JSON.parse(data);
     var new_chats_list = $.merge($.merge([], this.state.chats), new_chat.chats);
     this.setState({chats: new_chats_list.slice(-100)});

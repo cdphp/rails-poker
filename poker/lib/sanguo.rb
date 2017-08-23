@@ -2,6 +2,7 @@ module Sanguo
 
 def self.names
   [
+    "无名氏",
     "张让",
     "张角",
     "张宝",
