@@ -12,7 +12,6 @@ class ChatBox extends React.Component {
   render() {
     return(
       <div className="col-md-9 col-md-offset-1">
-        <h1>chat room demo based on action cable.</h1>
         <ChatList chats={this.state.chats}/>
         <AddChat me={this.props.me} onChatSubmit={this.handleChatSubmit.bind(this)}/>
       </div>
