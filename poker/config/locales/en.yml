@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  joint: "joined in the chat"
+  quit: "quit the chat"
