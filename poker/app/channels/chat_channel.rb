@@ -11,6 +11,12 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak data
+    if data['message'] == 'joint'
+      data['message'] = '加入了聊天.'
+    elsif data['message'] == 'quit'
+      data['message'] = '退出了聊天'
+    end
+
     @chat = Chat.new message: data['message'], user_id: data['me']
     @chat.save
   end
