@@ -9,6 +9,16 @@ class Chat < ApplicationRecord
 
   scope :new_chats, ->(number) { last(number) }
 
+  SYSTEM_MESSAGE = ['joint', 'quit']
+
+  def speaking
+    unless (lc = Chat.last) && [lc.user_id, lc.message] == [self.user_id, self.message]
+      self.save
+    # else
+    #   p "same message"
+    end
+  end
+
   def deal_before_save
     message.strip!
   end
@@ -17,5 +27,9 @@ class Chat < ApplicationRecord
     if Chat.select('id').all.count > 100000
       Chat.where('id < ?',Chat.select('id').limit(50000).last.id).delete_all
     end
+  end
+
+  def chat_type
+    SYSTEM_MESSAGE.include?(message) ? 'system' : 'user'
   end
 end

@@ -26,6 +26,13 @@ div.chat-box {
         margin-right: 0.5em;
       }
     }
+    li.system {
+      opacity: 0.33;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
   }
 }
 
