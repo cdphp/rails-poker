@@ -47,12 +47,12 @@ class ChatBox extends React.Component {
     me = this.props.me;
     App.channel = App.cable.subscriptions.create({channel: "ChatChannel"}, {
       connected() {
-        data = { message: 'joint', me: me };
+        data = { message: 'joint', me: me.id };
         this.perform('speak', data);
         setTimeout(() => this.perform('subscribed'), 1000 );
       },
       disconnected() {
-        data = { message: 'quit', me: me };
+        data = { message: 'quit', me: me.id };
         this.perform('speak', data);
         this.perform('unsubscribed');
       },
