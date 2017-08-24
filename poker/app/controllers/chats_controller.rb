@@ -7,7 +7,7 @@ class ChatsController < ApplicationController
 
   def new
     @current_room = current_room
-    @me = current_user_id
+    @me = who_am_i
   end
 
   private
@@ -16,11 +16,13 @@ class ChatsController < ApplicationController
     # room_id = params.try(:[], room_id) || 1
     # @chats = Chat.of_room(room_id)
     chats = Chat.new_chats(100)
-    render partial: "chats/chats.json", locals: { chats: chats, me: current_user_id }
+    render partial: "chats/chats.json", locals: { chats: chats, me: who_am_i }
   end
 
 
-  def current_user_id
+  def who_am_i
     session[:user_id] ||= rand(Sanguo.names.size)
+    session[:user_name] ||= Sanguo.names[session[:user_id]]
+    { id: session[:user_id], name: session[:user_name] }
   end
 end

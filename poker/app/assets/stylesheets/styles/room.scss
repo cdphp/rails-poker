@@ -33,6 +33,11 @@ div.chat-box {
       -ms-user-select: none;
       user-select: none;
     }
+    li.me {
+      .display-name {
+        background-color: black;
+      }
+    }
   }
 }
 

@@ -12,8 +12,8 @@ class ChatBox extends React.Component {
   render() {
     return(
       <div className="col-md-9 col-md-offset-1">
-        <ChatList chats={this.state.chats}/>
-        <AddChat me={this.props.me} onChatSubmit={this.handleChatSubmit.bind(this)}/>
+        <ChatList mename={this.props.me.name} chats={this.state.chats}/>
+        <AddChat meid={this.props.me.id} onChatSubmit={this.handleChatSubmit.bind(this)}/>
       </div>
     )
   }
@@ -54,6 +54,7 @@ class ChatBox extends React.Component {
       disconnected() {
         data = { message: 'quit', me: me };
         this.perform('speak', data);
+        this.perform('unsubscribed');
       },
       received(data) {
         // console.log('reviced');

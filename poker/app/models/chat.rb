@@ -29,7 +29,15 @@ class Chat < ApplicationRecord
     end
   end
 
+  def display_message
+    system_message? ? I18n.t(message) : message
+  end
+
   def chat_type
     SYSTEM_MESSAGE.include?(message) ? 'system' : 'user'
+  end
+
+  def system_message?
+    chat_type == 'system'
   end
 end
