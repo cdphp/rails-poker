@@ -1,0 +1,1 @@
+App.user_session=App.cable.subscriptions.create("UserSessionChannel",{connected:function(){},disconnected:function(){},received:function(){},register:function(e){this.perform("register",e)}});

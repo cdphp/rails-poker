@@ -11,7 +11,6 @@ module PokerNew
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.web_console.whitelisted_ips = ['10.0.2.2', '172.18.0.0/16']
 
     config.sass.preferred_syntax = :sass
     config.sass.line_comments = false
@@ -19,7 +18,7 @@ module PokerNew
 
     config.encoding = "utf-8"
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    # config.autoload_paths += %W(#{config.root}/lib)
 
     config.i18n.default_locale = :zh
 
