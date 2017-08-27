@@ -9,6 +9,7 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  # config.autoload_paths += %W(#{config.root}/lib)
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
@@ -21,9 +22,13 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  config.serve_static_assets = false
+  config.public_file_server.enabled = false
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
+
+  config.react.variant = :development
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -80,6 +85,10 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.action_cable.url = "ws://poker.miaowu.org:3000/cable"
+  # config.action_cable.allowed_request_origins = [/http:\/\/.*/, /https:\/\/.*/, 'http://0.0.0.0:3000','http://localhost:3334', 'http://localhost:3000', /(.*?)/, 'http://poker.miaowu.org']
+  config.action_cable.allowed_request_origins = [/http:\/\/.*/, /https:\/\/.*/]
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

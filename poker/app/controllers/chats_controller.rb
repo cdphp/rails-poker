@@ -1,7 +1,7 @@
 class ChatsController < ApplicationController
 
   def index
-    session[:chat_user_id] = rand(Sanguo.names.size)
+    session[:chat_user_id] = rand(::Sanguo.names.size)
     load_chats
   end
 
@@ -21,8 +21,8 @@ class ChatsController < ApplicationController
 
 
   def who_am_i
-    session[:user_id] ||= rand(Sanguo.names.size)
-    session[:user_name] ||= Sanguo.names[session[:user_id]]
+    session[:user_id] ||= rand(::Sanguo.names.size)
+    session[:user_name] ||= ::Sanguo.names[session[:user_id]]
     { id: session[:user_id], name: session[:user_name] }
   end
 end
