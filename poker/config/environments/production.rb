@@ -86,10 +86,10 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  config.action_cable.url = "ws://localhost:3000/cable"
+  config.action_cable.url = "ws://poker.miaowu.org:3000/cable"
   # config.action_cable.allowed_request_origins = [/http:\/\/.*/, /https:\/\/.*/, 'http://0.0.0.0:3000','http://localhost:3334', 'http://localhost:3000', /(.*?)/, 'http://poker.miaowu.org']
   config.action_cable.allowed_request_origins = [/http:\/\/.*/, /https:\/\/.*/]
-  
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
