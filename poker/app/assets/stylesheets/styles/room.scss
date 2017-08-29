@@ -26,6 +26,11 @@ div.chat-box {
       border-style: none;
       .display-name {
         margin-right: 0.5em;
+        float: left;
+      }
+       div.message {
+        // float: left;
+        word-break: break-all;
       }
     }
     li.system {

@@ -22,6 +22,20 @@ module PokerNew
 
     config.i18n.default_locale = :zh
 
+    # config.browserify_rails.use_browserifyinc = false
+
+    # Tell browserify-rails how to treat .js.jsx files
+    # config.browserify_rails.commandline_options = "-t reactify --extension=\".js.jsx\""
+    # Environments in which to generate source maps
+    #
+    # The default is none
+    # config.browserify_rails.source_map_environments << "development"
+
+    # Should the node_modules directory be evaluated for changes on page load
+    #
+    # The default is `false`
+    # config.browserify_rails.evaluate_node_modules = true
+
     config.react.server_renderer_pool_size  ||= 1  # ExecJS doesn't allow more than one on MRI
     config.react.server_renderer_timeout    ||= 20 # seconds
     config.react.server_renderer = React::ServerRendering::SprocketsRenderer

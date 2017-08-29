@@ -19,11 +19,9 @@ class ChatList extends React.Component {
   renderChat(chat) {
     let cls = "list-group-item" + " " + chat.type;
     if(chat.user == this.props.mename) cls += " me";
+    let message_html = '<span class="label label-default display-name">'+chat.user+'</span>'+marked(chat.message);
     return (
-      <li className={ cls } key={ chat.id }>
-        <span className="label label-default display-name">{ chat.user }</span>
-        { chat.message }
-      </li>
+      <li className={ cls } key={ chat.id } dangerouslySetInnerHTML={{__html: message_html}} />
     );
   }
 
