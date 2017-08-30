@@ -460,6 +460,7 @@ var inline = {
   code: /^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,
   br: /^ {2,}\n(?!\s*$)/,
   del: noop,
+  image: /\:\:(https?:\/\/[^ :]+)\s*/,
   text: /^[\s\S]+?(?=[\\<!\[_*`]| {2,}\n|$)/
 };
 
@@ -679,12 +680,25 @@ InlineLexer.prototype.output = function(src) {
       continue;
     }
 
+    console.log(this.rules.image);
+    console.log(src)
+    // image
+    if (cap = this.rules.image.exec(src)) {
+      src = src.substring(cap[0].length);
+      console.log("xxxxxxxxxx imahe");
+      if(!!cap[1] && cap[1].length > 1){
+        out += this.renderer.image(cap[1], '', '');
+      }
+      continue;
+    }
+
     // text
     if (cap = this.rules.text.exec(src)) {
       src = src.substring(cap[0].length);
       out += this.renderer.text(escape(this.smartypants(cap[0])));
       continue;
     }
+
 
     if (src) {
       throw new
@@ -1094,7 +1108,7 @@ function escape(html, encode) {
 }
 
 function unescape(html) {
-	// explicitly match decimal, hex, and named HTML entities 
+	// explicitly match decimal, hex, and named HTML entities
   return html.replace(/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/g, function(_, n) {
     n = n.toLowerCase();
     if (n === 'colon') return ':';
