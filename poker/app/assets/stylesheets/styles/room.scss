@@ -24,13 +24,14 @@ div.chat-box {
     li.list-group-item {
       min-height: $chat_height_min;
       border-style: none;
+      word-break: break-all;
       .display-name {
         margin-right: 0.5em;
         float: left;
       }
-       div.message {
-        // float: left;
-        word-break: break-all;
+      img {
+        max-width: 80%;
+        max-height: 400px;
       }
     }
     li.system {
