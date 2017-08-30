@@ -4,4 +4,6 @@
   .container
     #chatBox.row
       - chats = @chats
-      = react_component('ChatBox', { me: @me })
+      = react_component('ChatBox',
+                        { me: @me },
+                        {class: "col-md-12"})
