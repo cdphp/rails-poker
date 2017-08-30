@@ -1,8 +1,8 @@
 class Chat < ApplicationRecord
 
-  validates_length_of :message, :maximum => 246
+  validates_length_of :message, maximum: 255, minimum: 1, allow_blank: false, allow_nil: false
 
-  before_save :deal_before_save
+  # before_save :deal_before_save
   after_create_commit { ChatBroadcastJob.perform_later self}
 
   scope :of_room, ->(room_id) { where(room_id: room_id) }
@@ -12,6 +12,7 @@ class Chat < ApplicationRecord
   SYSTEM_MESSAGE = ['joint', 'quit']
 
   def speaking
+    deal_before_save
     unless (lc = Chat.last) && [lc.user_id, lc.message] == [self.user_id, self.message]
       self.save
     # else
@@ -20,7 +21,11 @@ class Chat < ApplicationRecord
   end
 
   def deal_before_save
+    message.gsub!(/<.*?>/, '')
     message.strip!
+    p "="*100
+    p message
+    p message.length
   end
 
   def clear_history

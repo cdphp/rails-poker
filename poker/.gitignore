@@ -22,3 +22,6 @@
 
 .DS_Store
 .tags*
+
+/node_modules
+/public/assets/
