@@ -680,12 +680,9 @@ InlineLexer.prototype.output = function(src) {
       continue;
     }
 
-    console.log(this.rules.image);
-    console.log(src)
     // image
     if (cap = this.rules.image.exec(src)) {
       src = src.substring(cap[0].length);
-      console.log("xxxxxxxxxx imahe");
       if(!!cap[1] && cap[1].length > 1){
         out += this.renderer.image(cap[1], '', '');
       }
