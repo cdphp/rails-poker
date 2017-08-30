@@ -8,7 +8,8 @@ html
     meta name="author" content="Poker"
     title Poker
     = stylesheet_link_tag 'application',
-                          'bootstrap.min'
+                          'bootstrap.min',
+                          'now-ui-kit'
 
     = csrf_meta_tags
     = action_cable_meta_tag
@@ -16,4 +17,3 @@ html
   body
     == yield
 = javascript_include_tag 'application', :"data-turbolinks-track" => true
-= javascript_include_tag 'bootstrap.min'
