@@ -18,8 +18,8 @@ body {
 
 div.chat-box {
   ul.chat-list {
-    height: 500px;
-    max-height: 500px;
+    height: 82vh;
+    max-height: 82vh;
     overflow-y: scroll;
     li.list-group-item {
       min-height: $chat_height_min;
@@ -30,8 +30,8 @@ div.chat-box {
         float: left;
       }
       img {
-        max-width: 80%;
-        max-height: 400px;
+        max-width: 18%;
+        max-height: 88px;
       }
     }
     li.system {
