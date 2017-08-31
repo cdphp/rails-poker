@@ -13,7 +13,8 @@ class Chat < ApplicationRecord
 
   def speaking
     deal_before_save
-    unless (lc = Chat.last) && [lc.user_id, lc.message] == [self.user_id, self.message]
+    last_message = Chat.where(group_id: self.group_id, user_id: self.user_id).last
+    unless last_message && last_message.message == self.message
       self.save
     # else
     #   p "same message"
@@ -23,9 +24,6 @@ class Chat < ApplicationRecord
   def deal_before_save
     message.gsub!(/<.*?>/, '')
     message.strip!
-    p "="*100
-    p message
-    p message.length
   end
 
   def clear_history

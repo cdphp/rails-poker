@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   serialization_scope :view_context
 
+  CHARACTER_GROUP = ChatName.names.keys
+
   def require_login
     unless current_user && current_user.id && current_room && current_room.id
       redirect_to (controller_name == 'rooms') ? new_usersession_path(room_id: params[:id]) : new_usersession_path
@@ -33,6 +35,19 @@ class ApplicationController < ActionController::Base
   def current_room
     @_current_room ||= session[:current_room_id] &&
       Room.find_by(id: session[:current_room_id])
+  end
+
+  def chat_session
+    group_id, name_id = nil, nil
+    group_id, name_id = PokerEncoder::decode(session[:chat_user_id]).split('x')
+  ensure 
+    unless group_id && name_id
+      group_id   = rand(CHARACTER_GROUP.size)
+      group_name = CHARACTER_GROUP[group_id]
+      name_id    = rand(ChatName.names[group_name].size)
+      session[:chat_user_id] = PokerEncoder::encode("#{group_id}x#{name_id}")
+      session[:user_name]    = ChatName.names[group_name][name_id]
+    end
   end
 
   private

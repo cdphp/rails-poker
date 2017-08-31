@@ -1,7 +1,8 @@
 module ApplicationHelper
 
   def display_user message
-    Sanguo.names[message.user_id.to_i]
+    group_name = ChatName.names.keys[message.group_id.to_i]
+    ChatName.names[group_name][message.user_id.to_i]
   end
 
   # def current_room

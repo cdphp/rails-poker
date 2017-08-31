@@ -1,6 +1,9 @@
-module Sanguo
-
-    def self.names
+module ChatNames::Sanguo
+  def self.key
+    'sanguo'
+  end
+  def self.included(base)
+    base.names[self.key] = 
       [
         "无名氏",
         "张让",

@@ -11,7 +11,9 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak data
-    @chat = Chat.new message: data['message'], user_id: data['me']
+    group_id, name_id = PokerEncoder::decode(data['me']).split('x')
+    @chat = Chat.new( message: data['message'], user_id: name_id || 0,
+                      group_id: group_id)
     @chat.speaking
   end
 
