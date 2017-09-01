@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170303062856) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "plays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "plays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "user_id",     null: false
     t.integer  "story_point"
     t.integer  "room_id",     null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170303062856) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "poker_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "poker_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "room_id"
     t.string   "number"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170303062856) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "room_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "room_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "room_id"
     t.integer  "user_id"
     t.datetime "join_date"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170303062856) do
     t.index ["user_id"], name: "index_room_users_on_user_id", using: :btree
   end
 
-  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "owner_id",   default: 0
     t.boolean  "lock",       default: false
     t.string   "subject",    default: ""
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20170303062856) do
     t.integer  "status",     default: 0,     null: false
   end
 
-  create_table "stories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "stories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "topic",       limit: 65535,             null: false
     t.text     "description", limit: 65535
     t.integer  "story_point"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170303062856) do
     t.datetime "updated_at",                            null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "display_name",                         null: false
     t.string   "role",              default: "normal", null: false
     t.integer  "qq",                default: 0
