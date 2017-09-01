@@ -1,7 +1,7 @@
 # encoding: utf-8
 class CreateStories < ActiveRecord::Migration[5.0]
   def change
-    create_table :stories do |t|
+    create_table :stories, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.text :topic, null: false
       t.text :description
       t.integer :story_point
