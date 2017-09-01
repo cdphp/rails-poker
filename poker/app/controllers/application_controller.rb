@@ -35,6 +35,20 @@ class ApplicationController < ActionController::Base
       Room.find_by(id: session[:current_room_id])
   end
 
+  def chat_session
+    group_id, name_id = nil, nil
+    group_id, name_id = PokerEncoder::decode(session[:chat_user_id]).split('x')
+  ensure
+    unless group_id && name_id
+      # group_id   = rand(CHARACTER_GROUP.size)
+      group_id = Date.today.to_time.to_i/(60*60*24) % CHARACTER_GROUP.size
+      group_name = CHARACTER_GROUP[group_id]
+      name_id    = rand(ChatName.names[group_name].size)
+      session[:chat_user_id] = PokerEncoder::encode("#{group_id}x#{name_id}")
+      session[:user_name]    = ChatName.names[group_name][name_id]
+    end
+  end
+
   private
   def print_user_sessions
     if Rails.env.eql? "development"
