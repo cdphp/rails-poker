@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   serialization_scope :view_context
 
+  CHARACTER_GROUP = ChatName.names.keys
+
   def require_login
     unless current_user && current_user.id && current_room && current_room.id
       redirect_to (controller_name == 'rooms') ? new_usersession_path(room_id: params[:id]) : new_usersession_path

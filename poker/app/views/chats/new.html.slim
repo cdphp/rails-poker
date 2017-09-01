@@ -1,5 +1,9 @@
 = stylesheet_link_tag 'main'
-.container-fluid
-  #chatBox.row
-    - chats = @chats
-    = react_component('ChatBox', { me: @me })
+.page-header
+  .page-header-image style="background-image: url('/images/header.jpg')"
+  .container
+    #chatBox.row
+      - chats = @chats
+      = react_component('ChatBox',
+                        { me: @me },
+                        {class: "col-md-12"})
