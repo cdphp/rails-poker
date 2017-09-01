@@ -6,10 +6,11 @@ class ChatName
   end
 
   include ChatNames::Sanguo
+  include ChatNames::Wow
   include ChatNames::Honglou
   include ChatNames::Shuihu
 
-  
+
   def push_names group_name, name_array
     @names[group_name] = name_array
   end
