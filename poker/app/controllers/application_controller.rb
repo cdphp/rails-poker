@@ -49,9 +49,9 @@ class ApplicationController < ActionController::Base
       session[:chat_user_id] = PokerEncoder::encode("#{group_id}x#{name_id}")
       session[:user_name]    = ChatName.names[group_name][name_id]
     ensure
-      unless group_id && name_id && (today_group_id == group_id)
-              && (name_id < ChatName.names[group_name].size)
-              && (name_id >= 0)
+      unless group_id && name_id && (today_group_id == group_id) &&
+              (name_id < ChatName.names[group_name].size) &&
+              (name_id >= 0)
         # group_id             = rand(CHARACTER_GROUP.size)
         group_id               = today_group_id
         group_name             = CHARACTER_GROUP[group_id]
