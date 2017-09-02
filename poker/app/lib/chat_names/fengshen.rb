@@ -1,6 +1,6 @@
-module ChatNames::Wow
+module ChatNames::Fengshen
   def self.key
-    'wow'
+    'fengshen'
   end
 
   def self.included(base)
