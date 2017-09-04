@@ -6,6 +6,7 @@ class ChatBox extends React.Component {
 
   componentDidMount() {
     this.loadChats();
+    this.bindModalImage();
     this.setupSubscription();
   }
 
@@ -32,6 +33,16 @@ class ChatBox extends React.Component {
     });
   }
 
+  bindModalImage(){
+    let r = this;
+    $("body").on('click', 'img', function(event) {
+      event.preventDefault();
+      /* Act on the event */
+      console.log("click");
+      r.showModal(this.src);
+    });
+  }
+
   handleChatSubmit(data) {
     App.channel.perform('speak', data);
   }
@@ -41,6 +52,15 @@ class ChatBox extends React.Component {
     var new_chat = JSON.parse(data);
     var new_chats_list = $.merge($.merge([], this.state.chats), new_chat.chats);
     this.setState({chats: new_chats_list.slice(-100)});
+  }
+
+  showModal(imageUrl){
+    $("#myModal .modal-dialog .modal-content .modal-body").html('<img src="'+ imageUrl +'">');
+    $("#myModal").modal('show');
+  }
+
+  hideModal(){
+    $("#myModal").modal('hide');
   }
 
   setupSubscription(){

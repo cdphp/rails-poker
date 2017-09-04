@@ -1,4 +1,8 @@
 class ChatList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   render() {
     let chats = this.props.chats.map((chat) => {
@@ -45,4 +49,5 @@ class ChatList extends React.Component {
   clickHead(e) {
     e.preventDefault();
   }
+
 }
