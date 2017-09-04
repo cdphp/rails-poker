@@ -35,7 +35,7 @@ class ChatBox extends React.Component {
 
   bindModalImage(){
     let r = this;
-    $("body").on('click', 'img', function(event) {
+    $("body").on('click', '.media-body img', function(event) {
       event.preventDefault();
       /* Act on the event */
       console.log("click");
