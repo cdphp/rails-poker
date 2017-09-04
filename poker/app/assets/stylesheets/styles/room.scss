@@ -61,6 +61,9 @@ div.chat-box {
         p {
           font-weight: 400;
           margin: auto 0;
+          img {
+            cursor: pointer;
+          }
         }
       }
       .display-name {
@@ -90,16 +93,27 @@ div.chat-box {
   }
 }
 .modal.modal-mini {
+  text-align: center;
   .modal-dialog{
-    max-width: 66vw;
+    max-height: 86vh;
+    max-width: 46vw;
+    display: inline-block;
+  }
+  .modal-content {
+    background-color: rgba(23, 23, 23, 0);
+    color: #FFFFFF;
   }
   .modal-content .modal-body {
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-bottom: 16px;
-    padding-left: 5px;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
     line-height: 1.9;
   }
+}
+
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.88);
 }
 .add-chat {
   .form-control {
