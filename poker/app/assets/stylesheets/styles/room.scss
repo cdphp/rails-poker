@@ -94,24 +94,37 @@ div.chat-box {
 }
 .modal.modal-mini {
   text-align: center;
-  .modal-dialog{
+  .modal-dialog {
     // max-height: 86vh;
     max-width: 46vw;
     display: inline-block;
-  }
-  .modal-content {
-    background-color: rgba(23, 23, 23, 0);
-    color: #FFFFFF;
-  }
-  .modal-content .modal-body {
-    padding-top: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
-    padding-left: 4px;
-    line-height: 1.9;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .modal-content {
+      background-color: rgba(23, 23, 23, 0);
+      color: #FFFFFF;
+    }
+    .modal-content {
+      .modal-body {
+        padding-top: 4px;
+        padding-right: 4px;
+        padding-bottom: 4px;
+        padding-left: 4px;
+        line-height: 1.9;
+      }
+    }
   }
 }
 
+.modal.fade{
+  .modal-dialog {
+    -webkit-transform: translate(-50%,-25%);
+    -o-transform: translate(-50%,-25%);
+    transform: translate(-50%,-25%);
+  }
+}
 .modal-backdrop {
     background: rgba(0, 0, 0, 0.88);
 }
