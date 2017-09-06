@@ -6,7 +6,7 @@ class PokerRoom extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="col-lg-12 row">
         <PokerTable statistics_data={this.state.statistics_data} owner={this.props.owner} attendees={this.state.attendees} room_status={this.state.room_status} onPlayCard={this.handlePlayCard.bind(this)} onToggleStatus={this.handleToggleStatus.bind(this)} />
         <AttendeeList room_status={this.state.room_status} attendees={this.state.attendees} current_user_id={this.props.current_user} current_user_name={this.props.current_user_name} />
         <SubjectPopup current_topic={this.state.current_topic} onSubjectUpdate={this.handleSubjectUpdate.bind(this)} />

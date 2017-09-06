@@ -1,4 +1,7 @@
 class UsersessionsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
+
   before_action :initial_result
 
   def new

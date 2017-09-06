@@ -8,22 +8,19 @@ class PokerEmitter extends React.Component {
     let owner_button = this.renderOwnerButton();
     let input_disable = this.is_disabled();
     return(
-      <div className="col-sm-8 poker-emitter form-inline">
-        <div className="row">
-          <form ref='play_card' onSubmit={this._onSubmit.bind(this)}>
-            <div className="input-group col-md-8">
-              <span className="input-group-addon">
-                <i className="glyphicon glyphicon-piggy-bank"></i>
-              </span>
-              <input type="number" name="card_number" disabled={input_disable} className="form-control input-lg" placeholder="Enter Your Number..." onChange={this._onChange.bind(this)} value={this.state.card_number} />
-              <span className="input-group-btn">
-                <button className="btn btn-default btn-lg" type="submit">Send</button>
-              </span>
+      <form ref='play_card' onSubmit={this._onSubmit.bind(this)}>
+        <div className="row col-sm-8 poker-emitter form-inline from-control">
+          <div className="col-md-4">
+            <div className="input-group-lg">
+              <input type="number" name="card_number" disabled={input_disable} className="form-control" placeholder="Enter Your Number..." onChange={this._onChange.bind(this)} value={this.state.card_number} />
             </div>
+          </div>
+          <div className="col-md-2">
+            <button className="btn btn-secondary btn-lg" type="submit">Send</button>
+          </div>
           { owner_button }
-          </form>
         </div>
-      </div>
+      </form>
     )
   }
 
@@ -32,7 +29,7 @@ class PokerEmitter extends React.Component {
     let class_name = "btn btn-info btn-lg "+this.props.room_status;
     if(this.props.owner){
       return(
-        <div className="input-group col-md-2 col-md-offset-1">
+        <div className="col-sm-2 offest-sm-3">
           <button className={class_name} type="button" onClick={this.handelStart.bind(this)} >{ button_text }</button>
         </div>
       )

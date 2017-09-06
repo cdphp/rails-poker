@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery prepend: true
 
   helper_method :current_user, :current_room, :current_user_session
   around_action :set_current_user

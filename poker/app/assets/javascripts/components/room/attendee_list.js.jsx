@@ -9,7 +9,7 @@ class AttendeeList extends React.Component {
       return this.renderAttendee(attendee);
     });
     return(
-      <div className="col-sm-3 col-sm-offset-1 attendee-list">
+      <div className="col-sm-3 offset-sm-1 attendee-list">
         <h4>AttendeeList</h4>
         <ol className="attendees-list" >
           { attendees }
@@ -43,7 +43,7 @@ class AttendeeList extends React.Component {
   card_number(attendee) {
     if(this.props.room_status == 'finish'){
       return(
-        <span className="badge card">
+        <span className="badge card-number">
           { attendee.number }
         </span>
         )
