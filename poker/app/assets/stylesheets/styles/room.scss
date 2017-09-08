@@ -129,6 +129,37 @@ div.chat-box {
     background: rgba(0, 0, 0, 0.88);
 }
 .add-chat {
+  a.emoji-btn {
+    color: white;
+    :hover {
+      color: orange;
+    }
+  }
+  a.emoji-btn.dropdown-toggle::after {
+    margin-left: 0;
+    border: 0;
+  }
+  .emoji-box {
+    margin-left: 1rem;
+    width: 24rem;
+    // height: 13rem;
+    opacity: .8;
+    ul {
+      width: 100%;
+      margin-bottom: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        cursor: pointer;
+        float: left;
+        display: inline;
+        padding: 0.2rem;
+        margin: 0.2rem 0.4rem;
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
   .form-control {
     font-size: 1.2em;
     color: white;
