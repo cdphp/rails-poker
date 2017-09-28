@@ -66,4 +66,4 @@ show me your ideas, thanks!
 Built by (c) Joey Huang and contributors. Released under the MIT license.
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcdphp%2Frails-poker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcdphp%2Frails-poker?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcdphp%2Frails-poker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcdphp%2Frails-poker?ref=badge_large)
