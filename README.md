@@ -1,16 +1,16 @@
 ## info
-  rails poker is a rails 5 based project.
-  and include a chatroom in it ;)
-  I start the project with a purpose to buid a demo for **rails5 + actioncable + reactjs**
-  i can't stop my keybord while i found much fun with it!
-  then i extend the actioncable demo to a nice chating app
-  and build a internal use online srum-poker app
+  rails poker is a rails 5 based project.</br>
+  and include a chatroom in it ;)</br>
+  I start the project with a purpose to buid a demo for **rails5 + actioncable + reactjs**</br>
+  i can't stop my keybord while i found much fun with it!</br>
+  then i extend the actioncable demo to a nice chating app</br>
+  and build a internal use online srum-poker app</br>
   
-  I think this will help someone who is interested in actioncable and reactjs,
+  I think this will help someone who is interested in actioncable and reactjs,</br>
   maybe this can be the starting example.
 ## demo
-  [Chat room](http://poker.miaowu.org/)
-  [scum poker](http://poker.miaowu.org/usersessions/new)
+  [Chat room](http://poker.miaowu.org/)</br>
+  [scum poker](http://poker.miaowu.org/usersessions/new)</br>
 
 ## FEATURES
   - **Chat Room**
