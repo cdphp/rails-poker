@@ -1,3 +1,9 @@
+## rails-poker
+[![Code Climate](https://codeclimate.com/github/cdphp/rails-poker/badges/gpa.svg)](https://codeclimate.com/github/cdphp/rails-poker)
+[![Build Status](https://travis-ci.org/cdphp/rails-poker.svg?branch=master)](https://travis-ci.org/cdphp/rails-poker)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcdphp%2Frails-poker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcdphp%2Frails-poker?ref=badge_shield)
+---
 ## info
   rails poker is a rails 5 based project.</br>
   and include a chatroom in it ;)</br>
