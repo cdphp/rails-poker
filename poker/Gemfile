@@ -48,7 +48,7 @@ gem 'slim'
 gem 'slim-rails'
 
 # React for view components
-gem 'react-rails', '~> 1.5.0'
+gem 'react-rails', '~> 2.4.1'
 
 # browserify-rails for
 # gem 'browserify-rails'
