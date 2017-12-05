@@ -50,7 +50,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (9.1.0)
     case_transform (0.2)
       activesupport
     chartjs-ror (3.3.1)
