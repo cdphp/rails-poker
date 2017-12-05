@@ -1,6 +1,7 @@
 version: '2'
 services:
   db:
+    container_name: poker_db_production
     image: mysql
     ports:
       - "3306"
@@ -11,6 +12,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
   app:
+    container_name: poker_app_production
     build: ./poker
     command: bundle exec rails s -p 3000 -b 0.0.0.0 -e production
     volumes:
@@ -20,6 +22,7 @@ services:
     links:
       - db
   nginx:
+    container_name: poker_nginx_production
     image: nginx
     volumes_from:
       - app
