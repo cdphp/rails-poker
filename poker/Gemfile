@@ -1,5 +1,5 @@
 # source 'https://rubygems.org'
-source 'https://ruby.taobao.org'
+source 'https://gems.ruby-china.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
@@ -58,6 +58,8 @@ gem 'sprockets-es6'
 gem 'active_model_serializers', '~> 0.10.4'
 gem 'chartjs-ror'
 gem 'identicon'
+
+gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

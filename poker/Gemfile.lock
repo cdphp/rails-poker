@@ -1,5 +1,5 @@
 GEM
-  remote: https://ruby.taobao.org/
+  remote: https://gems.ruby-china.org/
   specs:
     actioncable (5.0.2)
       actionpack (= 5.0.2)
@@ -94,6 +94,7 @@ GEM
     minitest (5.10.1)
     multi_json (1.12.1)
     mysql2 (0.4.5)
+    newrelic_rpm (4.6.0.338)
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
@@ -195,6 +196,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   listen
   mysql2
+  newrelic_rpm
   puma
   rails (>= 5.0.0.rc1, < 5.1)
   react-rails (~> 1.5.0)
