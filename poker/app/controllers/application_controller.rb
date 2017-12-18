@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ActionController::Serialization
   protect_from_forgery prepend: true
 
   helper_method :current_user, :current_room, :current_user_session

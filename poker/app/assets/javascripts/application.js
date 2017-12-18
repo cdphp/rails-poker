@@ -16,10 +16,10 @@
 //= require core
 //= require react
 //= require react_ujs
+//= require components
 //
 //= require plugin
 //
-//= require components
 //= require action_cable
 //
 //= require Chart.min
