@@ -1,16 +1,20 @@
+    console.log("box")
 class ChatBox extends React.Component {
   constructor(props) {
+    console.log("constructor")
     super(props);
     this.state = { chats: [] };
   }
 
   componentDidMount() {
+    console.log("did mount");
     this.loadChats();
     this.bindModalImage();
     this.setupSubscription();
   }
 
   render() {
+    console.log("render")
     return(
       <div className="col-md-12 chat-container">
         <ChatList mename={this.props.me.name} chats={this.state.chats}/>

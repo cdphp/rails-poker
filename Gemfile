@@ -48,7 +48,8 @@ gem 'slim'
 gem 'slim-rails'
 
 # React for view components
-gem 'react-rails', '~> 1.11.0'
+gem 'react-rails', '~> 2.0.0'
+gem 'mini_racer'
 
 # browserify-rails for
 # gem 'browserify-rails'

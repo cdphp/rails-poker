@@ -10,18 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery.min
-//= require core/tether.min
 //
-//= require core
 //= require react
 //= require react_ujs
-//
-//= require plugin
 //
 //= require components
 //= require action_cable
 //
+//= require polyfill.min
+//= require jquery.min
+//= require core/tether.min
+//= require core
+//= require plugin
+//
 //= require Chart.min
 //= require_tree .
-

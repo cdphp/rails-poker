@@ -1,6 +1,5 @@
 class ChatsController < ApplicationController
   before_action :chat_session
-
   def index
     load_chats
   end
