@@ -132,7 +132,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
-    react-rails (2.0.2)
+    react-rails (2.4.3)
       babel-transpiler (>= 0.7.0)
       connection_pool
       execjs
@@ -202,7 +202,7 @@ DEPENDENCIES
   newrelic_rpm
   puma
   rails (>= 5.0.0.rc1, < 5.1)
-  react-rails (~> 2.0.0)
+  react-rails (~> 2.4.3)
   redis
   sass-rails
   slim
