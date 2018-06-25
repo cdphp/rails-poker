@@ -10,7 +10,7 @@ class SubjectPopup extends React.Component {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-body">
-              <input type="text" className="form-control" id="subject" name="topic" placeholder='...' autofocus="autofocus" onChange={this._onChange.bind(this)} value={this.state.topic} />
+              <input type="text" className="form-control" id="subject" name="topic" placeholder='...' autoFocus="autofocus" onChange={this._onChange.bind(this)} value={this.state.topic} />
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>

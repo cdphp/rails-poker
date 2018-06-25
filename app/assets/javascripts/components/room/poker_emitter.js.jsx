@@ -8,7 +8,7 @@ class PokerEmitter extends React.Component {
     let owner_button = this.renderOwnerButton();
     let input_disable = this.is_disabled();
     return(
-      <form ref='play_card' onSubmit={this._onSubmit.bind(this)}>
+      <form onSubmit={this._onSubmit.bind(this)}>
         <div className="row col-sm-8 poker-emitter form-inline from-control">
           <div className="col-md-4">
             <div className="input-group-lg">
