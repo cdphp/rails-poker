@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
 
-  root "chats#new"
+  # root "chats#new"
   # root "usersessions#new"
+  root "resume#index"
 
   resources :chats
 
